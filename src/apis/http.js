@@ -15,7 +15,6 @@ let Axios=axios.create({
 
 //请求拦截器
 Axios.interceptors.request.use(function(config){
-
   //给头添加token
   if(localStorage.getItem('token')){
     config.headers.authorization=localStorage.getItem('token');

@@ -1,11 +1,12 @@
 <template lang="html">
-<div class="">
-  dddd
+<div >
+  <carousel></carousel>
 </div>
 </template>
 
 <script>
 import {Navigation} from '@/apis/api/homeApi.js'
+import carousel from '@/components/Carousel.vue'
 
 export default {
   name:'Home',
@@ -34,7 +35,7 @@ export default {
     }
   },
   components:{
-    // TopNavigation
+    carousel
   }
 }
 </script>

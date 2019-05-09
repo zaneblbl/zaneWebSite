@@ -1,38 +1,27 @@
 <template lang="html">
-  <div>
-    <el-menu
-      :default-active="this.$router.path"
-      class="el-menu-demo"
-      mode="horizontal"
-      @select="handleSelect"
-      background-color="#545c64"
-      text-color="#fff"
-      active-text-color="#ffd04b"
-      >
 
-      <!-- <el-menu-item disabled="true"><div class="NavLogo"></div></el-menu-item> -->
+<div class="">
 
-      <!-- <el-menu-item index="1">处理中心</el-menu-item>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#" @click="handleSelect('/Home')">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-      <el-submenu index="2">
-        <template slot="title">我的工作台</template>
-        <el-menu-item index="2-1">选项1</el-menu-item>
-        <el-menu-item index="2-2">选项2</el-menu-item>
-        <el-menu-item index="2-3">选项3</el-menu-item>
-        <el-submenu index="2-4">
-          <template slot="title">选项4</template>
-          <el-menu-item index="2-4-1">选项1</el-menu-item>
-          <el-menu-item index="2-4-2">选项2</el-menu-item>
-          <el-menu-item index="2-4-3">选项3</el-menu-item>
-        </el-submenu>
-      </el-submenu> -->
+    <div class="collapse navbar-collapse" id="navbarColor02">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item " v-for="(item,index) in navList" :key="index" :class="{active:navActiveItem==index}">
+          <a class="nav-link" @click="handleSelect(item.path,index)">{{item.navItem}}</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search">
+        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
 
-      <el-menu-item v-for="(item,i) in navList" :key="i" :index="item.name">
-        {{item.navItem}}
-      </el-menu-item>
-
-    </el-menu>
-  </div>
+</div>
 
 
 </template>
@@ -45,16 +34,24 @@ export default {
   data() {
     return {
       navList:[
-        {name:'/Home',navItem:'主页'},
-        {name:'/WorkSpace',navItem:'工作台'},
+        {path:'/Home',navItem:'主页'},
+        {path:'/Features',navItem:'简介'},
+        {path:'/About',navItem:'关于'}
       ],
+      navActiveItem:0,
     };
   },
+  computed:{
+  },
+  watch:{
+
+  },
   methods: {
-    handleSelect(key, keyPath) {
+    handleSelect(keyPath,index) {
       this.$router.push({
-        path:key
+        path:keyPath
       });
+      this.navActiveItem=index;
     }
   }
 }

@@ -6,20 +6,16 @@ const router=new Router({
   mode:'history',
   routes: [
     {
-      path:'/',
-      name:'App',
-      component:()=>import('@/App.vue')
-    },
-    {
       path: '/Home',
       name: 'Home',
       component: ()=>import('@/pages/Home.vue')
     },
     {
-      path:'/WorkSpace',
-      name:'WorkSpace',
-      component:()=>import('@/pages/WorkSpace.vue')
+      path:'/About',
+      name:'About',
+      component:()=>import('@/pages/About.vue')
     }
+
   ]
 });
 
