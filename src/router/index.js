@@ -6,6 +6,11 @@ const router=new Router({
   mode:'history',
   routes: [
     {
+      path:'/',
+      name:'/',
+      component:()=>import('@/pages/Home.vue')
+    },
+    {
       path: '/Home',
       name: 'Home',
       component: ()=>import('@/pages/Home.vue')
@@ -14,6 +19,11 @@ const router=new Router({
       path:'/About',
       name:'About',
       component:()=>import('@/pages/About.vue')
+    },
+    {
+      path:'*',
+      name:'All',
+      component:()=>{import('@/pages/Home.vue')}
     }
 
   ]

@@ -24,10 +24,11 @@ export default {
 * {
 -webkit-box-sizing: border-box;
 box-sizing: border-box;
+font-size:16px;
 }
 body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td,hr,button,article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {margin:0; padding:0;}
 html{-webkit-text-size-adjust:none;}
-body{ font:16px/2em Microsoft Yahei,tahoma,HELVETICA; text-align:center;}
+body{ font:16px Microsoft Yahei,tahoma,HELVETICA; text-align:center;}
 ol,ul{list-style:none;}
 h1,h2,h3,h4,h5,h6{font-size:100%;}
 img{border:none; vertical-align:top}

@@ -13,7 +13,7 @@
       <!-- 轮播图片 -->
       <div class="carousel-inner">
         <div class="carousel-item" v-for="(item,index) in imgitem" :key="index" :class="{active:imgActiveitem==index}">
-          <img :src="item.url" class="carouselimg">
+          <div class="picbox"><img :src="item.url"></div>
         </div>
       </div>
 
@@ -38,9 +38,9 @@ export default {
   data(){
     return {
       imgitem:[
-        // {url:require('@/assets/carouselImg/timg.jpg')},
-        // {url:require('@/assets/carouselImg/timg1.jpg')},
-        // {url:require('@/assets/carouselImg/timg.jpg')},
+        {url:require('@/assets/carouselImg/timg.jpg')},
+        {url:require('@/assets/carouselImg/timg.jpg')},
+        {url:require('@/assets/carouselImg/timg.jpg')},
       ],
       imgActiveitem:0,
     }
@@ -48,9 +48,25 @@ export default {
 }
 </script>
 
-<style lang="css" scoped>
+<style lang="less" scoped>
+
+@carouselHeight:350px;
+@carouselPicHeight:350px;
+
+.picbox{
+  width:100%;
+  height:@carouselHeight;
+  background-color: white;
+  overflow: hidden;
+  position:relative;
+}
 .carouselimg{
   width:100%;
-  height:auto;
+  height:@carouselPicHeight;
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
 }
+
 </style>

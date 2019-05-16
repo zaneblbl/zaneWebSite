@@ -20,6 +20,7 @@ npm run build --report
 
 # prototype website
 https://www.egret.com/
-
+# bootstrap4
+https://www.runoob.com/bootstrap4/bootstrap4-navbar.html
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
